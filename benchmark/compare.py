@@ -50,7 +50,6 @@ def jobs(filename):
 	return count
 
 def sizes(filename):
-	from pathutils import formatbytes
 	written = 0
 	read = 0
 	for d, line in allLinesFromFile(filename):
@@ -215,10 +214,10 @@ def printInfos(filename):
 	for field in fields:
 		toprint.append(globals()[field.strip()](filename))
 	printNice(toprint)
-path = "results/io/"
+path = "results/"
 listing = os.listdir(path)
 files = [path+x for x in listing if x.endswith(".txt")]
-#files = ["mine.txt", "scoobi.txt"]
+#files = ["manual.txt", "scoobi.txt"]
 fieldLengths["name"] = max(4, max([len(name(x)) for x in files]))
 files.sort()
 printNice(fields)

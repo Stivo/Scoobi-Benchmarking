@@ -7,40 +7,6 @@ import java.util.Date
 import org.apache.hadoop.mapreduce.Reducer
 import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs
 
-object Funcs {
-  def matcher1(line : String) = line.startsWith("als")
-  def matcher2(line : String) = line.startsWith("als")
-}
-
-
-class WikipediaLogMapper extends Mapper[LongWritable, Text, Text, NullWritable] {
- val format = new SimpleDateFormat("yy/MM/dd HH:mm:ss.SSS")
-    def getTime = format.format(new Date)+" "
-    def log(s : String) {
-	  System.err.println(getTime+s)
-    }
- 
-  override def run(context : Mapper[LongWritable,Text,Text,NullWritable]#Context) {
-      log("Starting filter")
-      val outs = new MultipleOutputs(context)
-      while (context.nextKeyValue()) {
-//    	  val inKey = context.getCurrentKey();
-    	  val inValue = context.getCurrentValue();
-    	  if (inValue.toString.startsWith("als")) {
-//    	    System.err.println("Found one "+inValue.toString)
-//    	    outs.write("all", inValue, NullWritable.get)
-    	    context.write(inValue, NullWritable.get)
-    	  }
-    	  if (inValue.toString.contains("Hitler"))
-    	    outs.write("hitler", inValue, NullWritable.get)
-      }
-      outs.close()
-      log("Ending filter")
-      ()
-  }
-
-}
-
 class Mapper1Job extends Mapper[LongWritable, Text, Text, ByteWritable] {
  val format = new SimpleDateFormat("yy/MM/dd HH:mm:ss.SSS")
     def getTime = format.format(new Date)+" "
@@ -49,26 +15,29 @@ class Mapper1Job extends Mapper[LongWritable, Text, Text, ByteWritable] {
     }
  
   override def run(context : Mapper[LongWritable,Text,Text,ByteWritable]#Context) {
+	  val highselectivity = WikipediaLog.highselectivity
       log("Starting filter")
       val i1 = new ByteWritable(0)
       val i2 = new ByteWritable(1)
       while (context.nextKeyValue()) {
 //    	  val inKey = context.getCurrentKey();
     	  val inValue = context.getCurrentValue();
-//    	  val first = inValue.toString.split(" ")(0)
-//	   	  if (first.contains(".")) {
-//	    	    val proj = first.split("\\.",2)(1)
-//	    	    if (proj=="m")
-//	    	      context.write(inValue, i1)
-//	    	    if (proj=="d" || proj=="q")
-//	    	      context.write(inValue, i2)
-//	    	  }
-    	  val s = inValue.toString
-	   	  if (s.contains("en")) 
-	    	      context.write(inValue, i1)
-	      if (s.contains("u") || s.contains("k"))
-	    	      context.write(inValue, i2)
-    	 
+    	  if (highselectivity) {
+	    	  val s = inValue.toString
+		   	  if (s.contains("en")) 
+		    	      context.write(inValue, i1)
+		      if (s.contains("u") || s.contains("k"))
+		    	      context.write(inValue, i2)
+    	  } else {
+	    	  val first = inValue.toString.split(" ")(0)
+		   	  if (first.contains(".")) {
+		    	    val proj = first.split("\\.",2)(1)
+		    	    if (proj=="m")
+		    	      context.write(inValue, i1)
+		    	    if (proj=="d" || proj=="q")
+		    	      context.write(inValue, i2)
+		    	  }
+    	  }
       }
       log("Ending filter")
       ()
@@ -144,20 +113,24 @@ class Mapper2Jobs1 extends Mapper[LongWritable, Text, Text, NullWritable] {
  
   override def run(context : Mapper[LongWritable,Text,Text,NullWritable]#Context) {
       log("Starting filter")
+	  val highselectivity = WikipediaLog.highselectivity
       val outs = new MultipleOutputs(context)
       while (context.nextKeyValue()) {
 //    	  val inKey = context.getCurrentKey();
     	  val inValue = context.getCurrentValue();
-//    	  val first = inValue.toString.split(" ")(0)
-//    	  if (first.contains("."))
-//    	  {
-//    		  val proj = first.split("\\.",2)(1)
-//    		  if (proj=="m")
-//    			  context.write(inValue, NullWritable.get)
-//    	  }
-    	  val s = inValue.toString
-	   	  if (s.contains("en")) 
-	    	 context.write(inValue, NullWritable.get)
+    	  if (highselectivity) {
+	    	  val s = inValue.toString
+		   	  if (s.contains("en")) 
+		    	 context.write(inValue, NullWritable.get)
+    	  } else {
+	    	  val first = inValue.toString.split(" ")(0)
+	    	  if (first.contains("."))
+	    	  {
+	    		  val proj = first.split("\\.",2)(1)
+	    		  if (proj=="m")
+	    			  context.write(inValue, NullWritable.get)
+	    	  }
+    	  }
       }
       outs.close()
       log("Ending filter")
@@ -175,20 +148,24 @@ class Mapper2Jobs2 extends Mapper[LongWritable, Text, Text, NullWritable] {
  
   override def run(context : Mapper[LongWritable,Text,Text,NullWritable]#Context) {
       log("Starting filter")
+ 	  val highselectivity = WikipediaLog.highselectivity
       val outs = new MultipleOutputs(context)
       while (context.nextKeyValue()) {
 //    	  val inKey = context.getCurrentKey();
     	  val inValue = context.getCurrentValue();
-//    	  val first = inValue.toString.split(" ")(0)
-//    	  if (first.contains("."))
-//    	  {
-//    	    val proj = first.split("\\.",2)(1)
-//    	    if (proj=="d" || proj=="q")
-//    	      context.write(inValue, NullWritable.get)
-//    	  }
-    	  val s = inValue.toString
-	   	  if (s.contains("u") || s.contains("k")) 
-	    	 context.write(inValue, NullWritable.get)
+    	  if (highselectivity) {
+    		  val s = inValue.toString
+			  if (s.contains("u") || s.contains("k")) 
+				  context.write(inValue, NullWritable.get)
+    	  } else {
+    		  val first = inValue.toString.split(" ")(0)
+	    	  if (first.contains("."))
+	    	  {
+	    	    val proj = first.split("\\.",2)(1)
+	    	    if (proj=="d" || proj=="q")
+	    	      context.write(inValue, NullWritable.get)
+	    	  }
+    	  }
       }
       outs.close()
       log("Ending filter")

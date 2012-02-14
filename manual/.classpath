@@ -26,7 +26,6 @@
 	<classpathentry kind="lib" path="/home/stivo/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="/home/stivo/.ivy2/cache/net.sf.kosmosfs/kfs/jars/kfs-0.3.jar"/>
 	<classpathentry kind="lib" path="/home/stivo/.ivy2/cache/hsqldb/hsqldb/jars/hsqldb-1.8.0.10.jar"/>
-	<classpathentry kind="lib" path="kryo-1.04-all.jar" sourcepath="/home/stivo/master/kryo-1.04/kryo/src"/>
 	<classpathentry kind="lib" path="/home/stivo/master/hadoop-0.20.2-cdh3u3/hadoop-core-0.20.2-cdh3u3.jar" sourcepath="/home/stivo/master/hadoop-0.20.2-cdh3u3/src/mapred"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>

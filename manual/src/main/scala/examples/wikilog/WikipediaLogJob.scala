@@ -12,8 +12,9 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat
 import org.apache.hadoop.fs.Path
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat
 
-object WikipediaLogJob {
-     def do2Jobs() {
+object WikipediaLog {
+  var highselectivity = false
+     def do2Jobs(input : String, output : String) {
 	     val conf = new Configuration();
 	     val job = new Job(conf, "2jobs1");
 	     job.setMapperClass(classOf[Mapper2Jobs1])
@@ -25,8 +26,8 @@ object WikipediaLogJob {
 	     job.setMapOutputKeyClass(classOf[Text])
 	     job.setMapOutputValueClass(classOf[NullWritable])
 	     
-	     FileInputFormat.setInputPaths(job, new Path("/home/stivo/master/testdata/pagecounts"));
-	     FileOutputFormat.setOutputPath(job, new Path("output/output1"));
+	     FileInputFormat.setInputPaths(job, new Path(input));
+	     FileOutputFormat.setOutputPath(job, new Path(output+"/output1"));
 	     
 	     job.waitForCompletion(true)
 	    
@@ -40,15 +41,16 @@ object WikipediaLogJob {
 	     job2.setMapOutputKeyClass(classOf[Text])
 	     job2.setMapOutputValueClass(classOf[NullWritable])
 	     
-	     FileInputFormat.setInputPaths(job2, new Path("/home/stivo/master/testdata/pagecounts"));
-	     FileOutputFormat.setOutputPath(job2, new Path("output/output2"));
+	     FileInputFormat.setInputPaths(job2, new Path(input));
+	     FileOutputFormat.setOutputPath(job2, new Path(output+"/output2"));
 	     
 	     job2.waitForCompletion(true)
 
      }
 
    def main(args : Array[String])  = {
-     do2Jobs()
+     highselectivity = args.length > 2
+     do2Jobs(args(0), args(1))
 //     doBothJobs()
 //     do1Job()
    }

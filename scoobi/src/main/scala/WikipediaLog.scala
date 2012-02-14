@@ -1,4 +1,4 @@
-package com.nicta.scoobi.examples
+package examples.wikilog
 
 import com.nicta.scoobi._
 import com.nicta.scoobi.Scoobi._
@@ -36,7 +36,7 @@ object WikipediaLog {
 266407762 1199314252.549 http://upload.wikimedia.org/fundraising/2007/people-meter-ltr.png -
 266407763 1199314252.545 http://upload.wikimedia.org/fundraising/2007/red-button-left.png -
    """
-    val (inputPath, outputPath) = ("/home/stivo/master/testdata/pagecounts", "output")
+    val (inputPath, outputPath) = (args(0), args(1))
 	// on command line
 	//    grep "de.wiki" currenttmp | grep ".svg" | grep -v "thumb.php"
     val lines: DList[String] = TextInput.fromTextFile(inputPath)
@@ -92,10 +92,13 @@ object WikipediaLog {
 //    DList.persist(TextOutput.toTextFile(hitler, outputPath + "/hitler"));
 //    DList.persist(TextOutput.toTextFile(totalSize, outputPath + "/totalSize"));
 //    DList.persist(TextOutput.toTextFile(all, outputPath + "/lines"))
-//	DList.persist(TextOutput.toTextFile(ens, outputPath + "/ens"));
-//	DList.persist(TextOutput.toTextFile(uks, outputPath + "/uks"));
-	DList.persist(TextOutput.toTextFile(dsqs, outputPath + "/dsqs"));
-//	DList.persist(TextOutput.toTextFile(ms, outputPath + "/ms"));
+    if (args.length>2) {
+		DList.persist(TextOutput.toTextFile(ens, outputPath + "/ens"));
+		DList.persist(TextOutput.toTextFile(uks, outputPath + "/uks"));
+    } else {
+		DList.persist(TextOutput.toTextFile(dsqs, outputPath + "/dsqs"));
+		DList.persist(TextOutput.toTextFile(ms, outputPath + "/ms"));
+    }
   }
   
 }

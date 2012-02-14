@@ -1,0 +1,5 @@
+anonymized access trace:
+http://dumps.wikimedia.org/other/pagecounts-raw/2012/2012-02/pagecounts-20120201-000000.gz
+
+another access trace, used in older examples:
+http://www.wikibench.eu/wiki/2008-01/wiki.1199321851.gz
