@@ -9,7 +9,7 @@ This project contains 3 folders:
  *    scoobi: The same programs written with scoobi
  *    benchmark: Some helper scripts to compile, run, collect and interpret the results
 
-## Installation:
+### Installation:
 
 1. Download the test data sets. They are listed in testdatas.txt. I use only one file, sometimes not even the full one. For cluster testing, multiple files should probably be used to have a bigger total datasize.
 2. I used milliseconds for more exact times. compare.py currently expects those kind of timestamps.
