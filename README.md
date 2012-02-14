@@ -1,24 +1,27 @@
-Some examples for comparing scoobi vs hand written performance.
-
+Benchmarking Scoobi against hand written code
+---
 Currently running examples:
 examples.wikilog.WikipediaLog
 
 This project contains 3 folders:
-- manual: The hand written programs, which should resemble what our DSL will output
-- scoobi: The same programs written with scoobi
-- benchmark: Some helper scripts to compile, run, collect and interpret the results
 
-Installation:
-1) Download the test data sets. They are listed in testdatas.txt. I use only one file, sometimes not even the full one. For cluster testing, multiple files should probably be used to have a bigger total datasize.
-2) I used milliseconds for more exact times. compare.py currently expects those kind of timestamps.
+ *    manual: The hand written programs, which should resemble what our DSL will output
+ *    scoobi: The same programs written with scoobi
+ *    benchmark: Some helper scripts to compile, run, collect and interpret the results
+
+## Installation:
+
+1. Download the test data sets. They are listed in testdatas.txt. I use only one file, sometimes not even the full one. For cluster testing, multiple files should probably be used to have a bigger total datasize.
+2. I used milliseconds for more exact times. compare.py currently expects those kind of timestamps.
 Either:
 	- Use the provided log4j.properties used by hadoop
 	- Only change the timestamp format in log4j.properties used by hadoop
 	- Change compare.py to recognize desired format for the timestamp
-3) I use a different version of scoobi, which does not override the default progress reporter. Otherwise the Total written and read sizes are not reported. See my github repository.
-4) My sbt installation is called sbt11 and is a 0.11.2. Maybe create an alias for that.
+3. I use a different version of scoobi, which does not override the default progress reporter. Otherwise the Total written and read sizes are not reported. See my github repository.
+4. My sbt installation is called sbt11 and is a 0.11.2. Maybe create an alias for that.
 
-Basic usage is this:
+### Basic usage:
+
 - Change the programs in scoobi and manual. Make sure they are in the same package and are named the same.
 - within benchmark folder:
 	- run compile.sh. This will create the jars for both programs and put them in progs, as manual.jar and scoobi.jar
@@ -31,7 +34,6 @@ Basic usage is this:
 
 Change whatever you need.
 
-TODO: 
+### TODO: 
 - License: Apache? Public Domain?
-- Create Markdown for github?
 - Describe which job uses which data set
