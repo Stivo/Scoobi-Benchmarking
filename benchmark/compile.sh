@@ -1,3 +1,5 @@
 
-cd ../manual ; sbt11 package-hadoop ; cp target/*.jar ../benchmark/progs/manual.jar; cd -
-cd ../scoobi ; sbt11 package-hadoop ; cp target/*.jar ../benchmark/progs/scoobi.jar; cd -
+for VERSION in manual scoobi 
+do
+	cd ../$VERSION ; rm target/*.jar; sbt11 package-hadoop ; cp target/*.jar ../benchmark/progs/$VERSION.jar; cd -
+done

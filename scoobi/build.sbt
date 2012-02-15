@@ -1,4 +1,4 @@
-name := "Scoobi Word Count"
+name := "Scoobi Examples"
 
 version := "0.1"
 
