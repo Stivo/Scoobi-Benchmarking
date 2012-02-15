@@ -1,4 +1,4 @@
 #!/bin/bash
 
-./run.sh ~/master/testdata/currenttmp ./output 355
+./run.sh ~/master/testdata/currenttmp ./output years hoist
 ./compare.py

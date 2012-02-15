@@ -1,0 +1,212 @@
+12/02/15 13:25:50.537 INFO security.UserGroupInformation: JAAS Configuration already set up for Hadoop, not re-installing.
+12/02/15 13:25:50.613 INFO scoobi.TextInput: Input path: /home/stivo/master/testdata/currenttmp (0.544169656GB)
+12/02/15 13:25:50.614 INFO scoobi.TextOutput: Output path: output
+12/02/15 13:25:50.636 INFO scoobi.Job: Running job: scoobi-20120215-132550
+12/02/15 13:25:50.637 INFO scoobi.Job: Number of steps: 1
+12/02/15 13:25:50.641 INFO scoobi.Job: Running step: 1 of 1
+12/02/15 13:25:53.488 INFO util.NativeCodeLoader: Loaded the native-hadoop library
+12/02/15 13:25:53.593 INFO scoobi.Step: Total input size: 0.544169656GB
+12/02/15 13:25:53.593 INFO scoobi.Step: Number of reducers: 1
+12/02/15 13:25:53.970 INFO jvm.JvmMetrics: Initializing JVM Metrics with processName=JobTracker, sessionId=
+12/02/15 13:25:54.161 INFO input.FileInputFormat: Total input paths to process : 1
+12/02/15 13:25:54.168 WARN snappy.LoadSnappy: Snappy native library is available
+12/02/15 13:25:54.168 INFO snappy.LoadSnappy: Snappy native library loaded
+12/02/15 13:25:54.255 INFO filecache.TrackerDistributedCacheManager: Creating scoobi.mappers in /tmp/hadoop-stivo/mapred/local/archive/-2237032621261722010_497157551_16375507/file/home/stivo/.scoobi/scoobi-20120215-132550/dist-objs-work-3953647121567390735 with rwxr-xr-x
+12/02/15 13:25:54.259 INFO filecache.TrackerDistributedCacheManager: Cached file:/home/stivo/.scoobi/scoobi-20120215-132550/dist-objs/scoobi.mappers as /tmp/hadoop-stivo/mapred/local/archive/-2237032621261722010_497157551_16375507/file/home/stivo/.scoobi/scoobi-20120215-132550/dist-objs/scoobi.mappers
+12/02/15 13:25:54.260 INFO filecache.TrackerDistributedCacheManager: Cached file:/home/stivo/.scoobi/scoobi-20120215-132550/dist-objs/scoobi.mappers as /tmp/hadoop-stivo/mapred/local/archive/-2237032621261722010_497157551_16375507/file/home/stivo/.scoobi/scoobi-20120215-132550/dist-objs/scoobi.mappers
+12/02/15 13:25:54.262 INFO filecache.TrackerDistributedCacheManager: Creating scoobi.reducers in /tmp/hadoop-stivo/mapred/local/archive/5195540965898048702_-1817890062_16375507/file/home/stivo/.scoobi/scoobi-20120215-132550/dist-objs-work--6923116090402061739 with rwxr-xr-x
+12/02/15 13:25:54.276 INFO filecache.TrackerDistributedCacheManager: Cached file:/home/stivo/.scoobi/scoobi-20120215-132550/dist-objs/scoobi.reducers as /tmp/hadoop-stivo/mapred/local/archive/5195540965898048702_-1817890062_16375507/file/home/stivo/.scoobi/scoobi-20120215-132550/dist-objs/scoobi.reducers
+12/02/15 13:25:54.277 INFO filecache.TrackerDistributedCacheManager: Cached file:/home/stivo/.scoobi/scoobi-20120215-132550/dist-objs/scoobi.reducers as /tmp/hadoop-stivo/mapred/local/archive/5195540965898048702_-1817890062_16375507/file/home/stivo/.scoobi/scoobi-20120215-132550/dist-objs/scoobi.reducers
+12/02/15 13:25:54.341 INFO mapred.JobClient: Running job: job_local_0001
+12/02/15 13:25:54.393 INFO util.ProcessTree: setsid exited with exit code 0
+12/02/15 13:25:54.396 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@5b0d95cd
+12/02/15 13:25:54.405 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:25:54.444 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:25:54.444 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:25:55.343 INFO mapred.JobClient:  map 0% reduce 0%
+12/02/15 13:25:57.372 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:25:57.378 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:25:57.379 INFO mapred.Task: Task:attempt_local_0001_m_000000_0 is done. And is in the process of commiting
+12/02/15 13:25:57.382 INFO mapred.LocalJobRunner: 
+12/02/15 13:25:57.382 INFO mapred.Task: Task 'attempt_local_0001_m_000000_0' done.
+12/02/15 13:25:57.384 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@693e4a5a
+12/02/15 13:25:57.389 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:25:57.411 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:25:57.411 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:25:58.347 INFO mapred.JobClient:  map 100% reduce 0%
+12/02/15 13:26:00.013 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:00.015 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:00.016 INFO mapred.Task: Task:attempt_local_0001_m_000001_0 is done. And is in the process of commiting
+12/02/15 13:26:00.017 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:00.017 INFO mapred.Task: Task 'attempt_local_0001_m_000001_0' done.
+12/02/15 13:26:00.019 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@bf47ae8
+12/02/15 13:26:00.020 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:00.033 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:00.033 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:02.717 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:02.718 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:02.719 INFO mapred.Task: Task:attempt_local_0001_m_000002_0 is done. And is in the process of commiting
+12/02/15 13:26:02.720 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:02.720 INFO mapred.Task: Task 'attempt_local_0001_m_000002_0' done.
+12/02/15 13:26:02.722 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@33c13d0b
+12/02/15 13:26:02.724 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:02.749 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:02.749 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:05.335 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:05.336 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:05.337 INFO mapred.Task: Task:attempt_local_0001_m_000003_0 is done. And is in the process of commiting
+12/02/15 13:26:05.338 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:05.338 INFO mapred.Task: Task 'attempt_local_0001_m_000003_0' done.
+12/02/15 13:26:05.340 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@17991de1
+12/02/15 13:26:05.341 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:05.356 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:05.356 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:08.021 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:08.023 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:08.024 INFO mapred.Task: Task:attempt_local_0001_m_000004_0 is done. And is in the process of commiting
+12/02/15 13:26:08.024 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:08.024 INFO mapred.Task: Task 'attempt_local_0001_m_000004_0' done.
+12/02/15 13:26:08.026 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@644ca6b6
+12/02/15 13:26:08.027 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:08.042 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:08.042 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:10.652 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:10.654 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:10.655 INFO mapred.Task: Task:attempt_local_0001_m_000005_0 is done. And is in the process of commiting
+12/02/15 13:26:10.656 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:10.656 INFO mapred.Task: Task 'attempt_local_0001_m_000005_0' done.
+12/02/15 13:26:10.657 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@109ce4a3
+12/02/15 13:26:10.662 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:10.675 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:10.675 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:13.242 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:13.243 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:13.244 INFO mapred.Task: Task:attempt_local_0001_m_000006_0 is done. And is in the process of commiting
+12/02/15 13:26:13.244 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:13.244 INFO mapred.Task: Task 'attempt_local_0001_m_000006_0' done.
+12/02/15 13:26:13.246 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@18f3552f
+12/02/15 13:26:13.247 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:13.263 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:13.263 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:15.824 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:15.826 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:15.827 INFO mapred.Task: Task:attempt_local_0001_m_000007_0 is done. And is in the process of commiting
+12/02/15 13:26:15.828 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:15.828 INFO mapred.Task: Task 'attempt_local_0001_m_000007_0' done.
+12/02/15 13:26:15.829 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@3b8e80a6
+12/02/15 13:26:15.830 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:15.842 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:15.842 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:18.412 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:18.414 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:18.414 INFO mapred.Task: Task:attempt_local_0001_m_000008_0 is done. And is in the process of commiting
+12/02/15 13:26:18.415 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:18.415 INFO mapred.Task: Task 'attempt_local_0001_m_000008_0' done.
+12/02/15 13:26:18.416 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@d694eca
+12/02/15 13:26:18.417 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:18.430 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:18.430 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:20.997 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:20.999 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:21.000 INFO mapred.Task: Task:attempt_local_0001_m_000009_0 is done. And is in the process of commiting
+12/02/15 13:26:21.000 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:21.000 INFO mapred.Task: Task 'attempt_local_0001_m_000009_0' done.
+12/02/15 13:26:21.001 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@35ad0839
+12/02/15 13:26:21.002 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:21.014 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:21.014 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:23.649 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:23.650 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:23.651 INFO mapred.Task: Task:attempt_local_0001_m_000010_0 is done. And is in the process of commiting
+12/02/15 13:26:23.652 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:23.652 INFO mapred.Task: Task 'attempt_local_0001_m_000010_0' done.
+12/02/15 13:26:23.653 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@1864160e
+12/02/15 13:26:23.653 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:23.670 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:23.670 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:26.213 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:26.215 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:26.216 INFO mapred.Task: Task:attempt_local_0001_m_000011_0 is done. And is in the process of commiting
+12/02/15 13:26:26.217 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:26.217 INFO mapred.Task: Task 'attempt_local_0001_m_000011_0' done.
+12/02/15 13:26:26.230 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@7befc208
+12/02/15 13:26:26.231 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:26.243 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:26.243 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:28.799 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:28.801 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:28.802 INFO mapred.Task: Task:attempt_local_0001_m_000012_0 is done. And is in the process of commiting
+12/02/15 13:26:28.802 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:28.802 INFO mapred.Task: Task 'attempt_local_0001_m_000012_0' done.
+12/02/15 13:26:28.803 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@64e0fcac
+12/02/15 13:26:28.804 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:28.816 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:28.817 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:31.407 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:31.410 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:31.413 INFO mapred.Task: Task:attempt_local_0001_m_000013_0 is done. And is in the process of commiting
+12/02/15 13:26:31.417 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:31.418 INFO mapred.Task: Task 'attempt_local_0001_m_000013_0' done.
+12/02/15 13:26:31.423 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@2392d604
+12/02/15 13:26:31.427 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:31.443 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:31.443 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:34.040 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:34.041 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:34.041 INFO mapred.Task: Task:attempt_local_0001_m_000014_0 is done. And is in the process of commiting
+12/02/15 13:26:34.042 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:34.042 INFO mapred.Task: Task 'attempt_local_0001_m_000014_0' done.
+12/02/15 13:26:34.043 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@132f9bcd
+12/02/15 13:26:34.045 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:34.057 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:34.057 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:36.644 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:36.646 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:36.647 INFO mapred.Task: Task:attempt_local_0001_m_000015_0 is done. And is in the process of commiting
+12/02/15 13:26:36.647 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:36.647 INFO mapred.Task: Task 'attempt_local_0001_m_000015_0' done.
+12/02/15 13:26:36.648 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@68fc8e75
+12/02/15 13:26:36.649 INFO mapred.MapTask: io.sort.mb = 100
+12/02/15 13:26:36.662 INFO mapred.MapTask: data buffer = 79691776/99614720
+12/02/15 13:26:36.662 INFO mapred.MapTask: record buffer = 262144/327680
+12/02/15 13:26:37.280 INFO mapred.MapTask: Starting flush of map output
+12/02/15 13:26:37.281 INFO mapred.MapTask: Finished spill 0
+12/02/15 13:26:37.282 INFO mapred.Task: Task:attempt_local_0001_m_000016_0 is done. And is in the process of commiting
+12/02/15 13:26:37.282 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:37.282 INFO mapred.Task: Task 'attempt_local_0001_m_000016_0' done.
+12/02/15 13:26:37.303 INFO mapred.Task:  Using ResourceCalculatorPlugin : org.apache.hadoop.util.LinuxResourceCalculatorPlugin@60e2fbeb
+12/02/15 13:26:37.303 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:37.309 INFO mapred.Merger: Merging 17 sorted segments
+12/02/15 13:26:37.310 INFO mapred.Merger: Merging 8 intermediate segments out of a total of 17
+12/02/15 13:26:37.314 INFO mapred.Merger: Down to the last merge-pass, with 10 segments left of total size: 7258 bytes
+12/02/15 13:26:37.314 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:37.346 INFO mapred.Task: Task:attempt_local_0001_r_000000_0 is done. And is in the process of commiting
+12/02/15 13:26:37.346 INFO mapred.LocalJobRunner: 
+12/02/15 13:26:37.346 INFO mapred.Task: Task attempt_local_0001_r_000000_0 is allowed to commit now
+12/02/15 13:26:37.348 INFO output.FileOutputCommitter: Saved output of task 'attempt_local_0001_r_000000_0' to file:/home/stivo/.scoobi/scoobi-20120215-132550/tmp-out
+12/02/15 13:26:37.348 INFO mapred.LocalJobRunner: reduce > reduce
+12/02/15 13:26:37.348 INFO mapred.Task: Task 'attempt_local_0001_r_000000_0' done.
+12/02/15 13:26:37.359 INFO filecache.TrackerDistributedCacheManager: Deleted path /tmp/hadoop-stivo/mapred/local/archive/-2237032621261722010_497157551_16375507/file/home/stivo/.scoobi/scoobi-20120215-132550/dist-objs/scoobi.mappers
+12/02/15 13:26:37.360 INFO filecache.TrackerDistributedCacheManager: Deleted path /tmp/hadoop-stivo/mapred/local/archive/5195540965898048702_-1817890062_16375507/file/home/stivo/.scoobi/scoobi-20120215-132550/dist-objs/scoobi.reducers
+12/02/15 13:26:37.391 INFO mapred.JobClient:  map 100% reduce 100%
+12/02/15 13:26:37.391 INFO mapred.JobClient: Job complete: job_local_0001
+12/02/15 13:26:37.392 INFO mapred.JobClient: Counters: 17
+12/02/15 13:26:37.392 INFO mapred.JobClient:   FileSystemCounters
+12/02/15 13:26:37.393 INFO mapred.JobClient:     FILE_BYTES_READ=5848851240
+12/02/15 13:26:37.393 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=198178495
+12/02/15 13:26:37.393 INFO mapred.JobClient:   Map-Reduce Framework
+12/02/15 13:26:37.394 INFO mapred.JobClient:     Map input records=5000000
+12/02/15 13:26:37.394 INFO mapred.JobClient:     Reduce shuffle bytes=0
+12/02/15 13:26:37.394 INFO mapred.JobClient:     Spilled Records=766
+12/02/15 13:26:37.395 INFO mapred.JobClient:     Map output bytes=6580
+12/02/15 13:26:37.395 INFO mapred.JobClient:     Total committed heap usage (bytes)=11438587904
+12/02/15 13:26:37.396 INFO mapred.JobClient:     CPU time spent (ms)=0
+12/02/15 13:26:37.396 INFO mapred.JobClient:     SPLIT_RAW_BYTES=3570
+12/02/15 13:26:37.397 INFO mapred.JobClient:     Combine input records=0
+12/02/15 13:26:37.397 INFO mapred.JobClient:     Reduce input records=329
+12/02/15 13:26:37.397 INFO mapred.JobClient:     Reduce input groups=329
+12/02/15 13:26:37.397 INFO mapred.JobClient:     Combine output records=0
+12/02/15 13:26:37.398 INFO mapred.JobClient:     Physical memory (bytes) snapshot=0
+12/02/15 13:26:37.398 INFO mapred.JobClient:     Reduce output records=0
+12/02/15 13:26:37.398 INFO mapred.JobClient:     Virtual memory (bytes) snapshot=0
+12/02/15 13:26:37.399 INFO mapred.JobClient:     Map output records=329

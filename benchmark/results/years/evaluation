@@ -1,0 +1,7 @@
+   name            | jobs | computation |  totalTime  |    read / write   | jobLengths
+manual-hoisted.txt |    1 | 0:00:19.251 | 0:00:19.478 |  5.418Gb/ 0.156Gb | ['0:00:19.100']
+manual.txt         |    1 | 0:00:29.164 | 0:00:29.363 |  5.418Gb/ 0.156Gb | ['0:00:29.011']
+scoobi.txt         |    1 | 0:00:43.223 | 0:00:46.862 |  5.447Gb/ 0.185Gb | ['0:00:43.050']
+
+input:
+  5000000  20000000 544169656 /home/stivo/master/testdata/currenttmp
