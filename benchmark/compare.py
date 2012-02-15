@@ -217,7 +217,7 @@ def printInfos(filename):
 path = "results/"
 listing = os.listdir(path)
 files = [path+x for x in listing if x.endswith(".txt")]
-#files = ["manual.txt", "scoobi.txt"]
+files = ["manual.txt", "scoobi.txt"]
 fieldLengths["name"] = max(4, max([len(name(x)) for x in files]))
 files.sort()
 printNice(fields)

@@ -1,19 +1,4 @@
-/**
-  * Copyright 2011 National ICT Australia Limited
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License");
-  * you may not use this file except in compliance with the License.
-  * You may obtain a copy of the License at
-  *
-  * http://www.apache.org/licenses/LICENSE-2.0
-  *
-  * Unless required by applicable law or agreed to in writing, software
-  * distributed under the License is distributed on an "AS IS" BASIS,
-  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  * See the License for the specific language governing permissions and
-  * limitations under the License.
-  */
-package com.nicta.scoobi.examples
+package examples.weblog
 
 import com.nicta.scoobi._
 import com.nicta.scoobi.Scoobi._
@@ -51,21 +36,20 @@ object WebLogAnalyzer {
   	val pattern1 = Pattern.compile("18\\d{2}")
 
   def main(args: Array[String]) = withHadoopArgs(args) { a =>
+    // some extracts from this file for reference
     """
 266407760 1199314252.550 http://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/RAF_roundel.svg/75px-RAF_roundel.svg.png -
 266407764 1199314252.591 http://es.wikipedia.org/skins-1.5/common/images/magnify-clip.png -
 266407762 1199314252.549 http://upload.wikimedia.org/fundraising/2007/people-meter-ltr.png -
 266407763 1199314252.545 http://upload.wikimedia.org/fundraising/2007/red-button-left.png -
    """
-    val (inputPath, outputPath) = ("/home/stivo/master/testdata/currenttmp", "output")
-	// on command line
-	//    grep "de.wiki" currenttmp | grep ".svg" | grep -v "thumb.php"
+    val (inputPath, outputPath) = (args(0), args(1))
     val lines: DList[String] = TextInput.fromTextFile(inputPath)
 	
-//	val years = lines.flatMap(_.split(" ")).flatMap(_.split("/"))
-//	.filter(_.matches("\\d+")).filter(_.length==4).filter(_.startsWith("19"))
-      /** Keep elements from the distributed list that pass a specified predicate function. */
+	val years = lines.flatMap(_.split(" ")).flatMap(_.split("/"))
+	.filter(_.matches("18\\d{2}"))
 
+    // to allow measuring of the time in the mapper phase
 	val all = filter(lines, {x : String => x.length>0})
 //	val dates = all.flatMap(_.split(" ")).filter(_.contains("/")).flatMap(_.split("/"))
 ////		.filter(_.matches("18\\d{2}"))
@@ -103,9 +87,12 @@ object WebLogAnalyzer {
 */    
     //val date = lines.map(x =>x.slice(x.indexOf("["), x.indexOf("]")))
     // We can evaluate this, and write it to a text file
-//    DList.persist(TextOutput.toTextFile(years, outputPath + "/word-results"));
+	if (args.length > 2) {
+		DList.persist(TextOutput.toTextFile(years, outputPath));
+	} else {
 //    DList.persist(TextOutput.toTextFile(length, outputPath + "/word-results"));
-	DList.persist(TextOutput.toTextFile(partCounts, outputPath + "/word-results"));
+		DList.persist(TextOutput.toTextFile(partCounts, outputPath));
+	}
   }
   
 }

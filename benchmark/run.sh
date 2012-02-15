@@ -1,9 +1,9 @@
 #!/bin/bash
-
-#PROG=generated.test.WebLogAnalyzerJob
+#set -x
+PROG=examples.weblog.WebLogAnalyzer
 #PROG=generated.test.WordCountJob
 #PROG=examples.join.JoinExampleJob
-PROG=examples.wikilog.WikipediaLog
+#PROG=examples.wikilog.WikipediaLog
 
 for VERSION in manual scoobi 
 do
