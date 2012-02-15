@@ -1,7 +1,9 @@
 Benchmarking Scoobi against hand written code
 ---
 Currently running examples:
-examples.wikilog.WikipediaLog
+
+* examples.wikilog.WikipediaLog: Uses the wikibench access trace
+* examples.weblog.WebLogAnalyzer: Uses the pagecounts from wikipedia
 
 This project contains 3 folders:
 
