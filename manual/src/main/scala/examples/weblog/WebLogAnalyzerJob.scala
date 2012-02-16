@@ -10,12 +10,10 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat
 
 object WebLogAnalyzer {
   
-  var doYears = false
-  var hoist = false
   def main(args : Array[String]) { 
-     	doYears = args.length>2
-     	hoist = args.length>3
 	    val conf = new Configuration();
+     	conf.setBoolean("doYears", args.length>2);
+     	conf.setBoolean("doYearsHoisted", args.length>3);
 	    val job = new Job(conf, "web log analysis");
 		job.setJobName( "web log analysis" );
 		job.setJarByClass( getClass() );

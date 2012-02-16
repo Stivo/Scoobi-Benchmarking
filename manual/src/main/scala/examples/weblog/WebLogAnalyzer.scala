@@ -213,8 +213,8 @@ class WebLogAnalyzerMapper extends Mapper[LongWritable, Text, Text, NullWritable
 
     
     override def run(context : Mapper[LongWritable,Text,Text,NullWritable]#Context) {
-	  if (WebLogAnalyzer.doYears) {
-	    if (WebLogAnalyzer.hoist) {
+	  if (context.getConfiguration.getBoolean("doYears", false)) {
+	    if (context.getConfiguration.getBoolean("doYearsHoisted", false)) {
 		  	runFindYearsHoisted(context)
 	    } else {
 	      runFindYears(context)
