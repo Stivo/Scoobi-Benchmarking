@@ -1,13 +1,11 @@
 package com.nicta.scoobi.examples
 
-import com.nicta.scoobi._
 import com.nicta.scoobi.Scoobi._
-import com.nicta.scoobi.io.text._
 import java.io._
 import java.util.Date
 import java.text.SimpleDateFormat
 import java.util.regex.Pattern
-import com.nicta.scoobi.lib.Join._
+import com.nicta.scoobi.Emitter
 
 object JoinExample {
 
@@ -51,8 +49,8 @@ object JoinExample {
         (line.split(" ")(2), 1)
     }
     val joined = join(left, right)
-    val result = joined.groupByKey.combine((x : Int, y : Int) => x+y)
-	DList.persist(TextOutput.toTextFile(result, outputPath + "/word-results"));
+//    val result = joined.groupByKey.combine((x : Int, y : Int) => x+y)
+//	DList.persist(TextOutput.toTextFile(result, outputPath + "/word-results"));
   }
   
 }

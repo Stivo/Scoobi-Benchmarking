@@ -1,14 +1,12 @@
 package com.nicta.scoobi.examples
 
-import com.nicta.scoobi._
 import com.nicta.scoobi.Scoobi._
-import com.nicta.scoobi.io.text._
 import java.io._
 import java.util.Date
 import java.text.SimpleDateFormat
 import java.util.regex.Pattern
-import com.nicta.scoobi.lib.Join._
 import scala.collection.mutable.Buffer
+import com.nicta.scoobi.Emitter
 
 object Tpch {
 
